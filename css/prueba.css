@@ -1,0 +1,282 @@
+* {
+  box-sizing: border-box; }
+
+/*EXTEND*/
+.cardtex, .historia .historia1 .card-text, .colecciones .media .card-text {
+  width: 50%;
+  display: inline-block;
+  position: fixed; }
+
+/*HEADER*/
+#navheader {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0; }
+  #navheader #dropdownMenuButton {
+    border-style: none;
+    background: none; }
+    #navheader #dropdownMenuButton:hover {
+      cursor: pointer;
+      background: rgba(0, 0, 0, 0.1); }
+  #navheader .dropdown-item {
+    font-family: 'Playfair Display', serif; }
+  #navheader .navbar-brand {
+    opacity: 70%; }
+
+/*FOOTER*/
+#navfoot {
+  padding: 0;
+  padding-bottom: 10px;
+  position: relative; }
+  #navfoot form {
+    position: relative;
+    left: 35%; }
+    #navfoot form label {
+      color: #baa59d;
+      padding-bottom: 5px;
+      font-family: 'Open Sans Condensed', sans-serif;
+      font-size: smaller;
+      line-height: normal;
+      letter-spacing: 2px; }
+    #navfoot form #mail {
+      font-size: smaller;
+      line-height: normal; }
+    #navfoot form button.signup {
+      position: relative;
+      display: inline-block;
+      color: #ffffff;
+      background-color: #baa59d;
+      border-color: #baa59d;
+      font-family: 'Open Sans Condensed', sans-serif;
+      font-size: smaller;
+      line-height: normal;
+      letter-spacing: 2px; }
+  #navfoot div.redes {
+    position: absolute;
+    opacity: 70%;
+    padding: 20px; }
+    #navfoot div.redes a {
+      padding: 0.5rem; }
+
+/*ESTRUCTURA GENERAL*/
+.contenedor {
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden; }
+
+/*ESTRUCTURA HISTORIA*/
+.historia {
+  background-color: rgba(109, 126, 128, 0.7); }
+  .historia h1 {
+    color: #ffffff;
+    border-bottom: ridge;
+    padding-left: 30px;
+    font-family: 'Playfair Display', serif; }
+  .historia p {
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    font-family: 'Playfair Display', serif; }
+  .historia .historia1 {
+    padding: 20px; }
+    .historia .historia1 .card-text {
+      left: 25%;
+      background-color: rgba(109, 126, 128, 0.7); }
+    .historia .historia1 img {
+      width: 20rem;
+      position: relative;
+      left: 8rem;
+      animation-name: transicion;
+      animation-duration: 3s;
+      animation-iteration-count: 1;
+      animation-direction: normal;
+      animation-delay: 1000ms;
+      animation-timing-function: ease;
+      transform: translateY(70px); }
+  .historia .historia2 .card {
+    border: none;
+    position: static; }
+
+/*ANIMACION*/
+@keyframes transicion {
+  0% {
+    transform: translateY(-50px); }
+  100% {
+    transform: translateY(70px); } }
+
+/*ESTRUCTURA COLECCION*/
+.colecciones {
+  background-color: #ffffff; }
+  .colecciones h1 {
+    color: #baa59d;
+    border-bottom: ridge;
+    padding-left: 30px;
+    font-family: 'Playfair Display', serif; }
+  .colecciones p {
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    font-family: 'Playfair Display', serif;
+    color: #5f6264; }
+  .colecciones .media {
+    justify-content: center;
+    padding: 20px; }
+    .colecciones .media .card-text {
+      background-color: rgba(0, 0, 0, 0.6);
+      animation-name: transiciontexto;
+      animation-duration: 3s;
+      animation-iteration-count: 1;
+      animation-direction: normal;
+      animation-delay: 1000ms;
+      animation-timing-function: ease;
+      transform: translateX(-125px); }
+    .colecciones .media img {
+      padding: 20px;
+      width: 25rem;
+      margin-left: 1rem;
+      animation-name: transicioncolec;
+      animation-duration: 3s;
+      animation-iteration-count: 1;
+      animation-direction: normal;
+      animation-delay: 1000ms;
+      animation-timing-function: ease;
+      transform: translateX(140px); }
+
+/*ANIMACION*/
+@keyframes transicioncolec {
+  0% {
+    transform: translateX(0px); }
+  100% {
+    transform: translateX(140px); } }
+
+@keyframes transiciontexto {
+  0% {
+    transform: translateX(0px); }
+  100% {
+    transform: translateX(-125px); } }
+
+/*ESTRUCTURA SHOP*/
+.shop {
+  background-color: rgba(109, 126, 128, 0.7); }
+  .shop h1 {
+    color: #ffffff;
+    border-bottom: ridge;
+    padding-left: 30px;
+    font-family: 'Playfair Display', serif; }
+  .shop p {
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    font-family: 'Playfair Display', serif; }
+  .shop .card-deck {
+    padding: 20px; }
+    .shop .card-deck .card {
+      background-color: #ffffff; }
+      .shop .card-deck .card h1 {
+        color: #baa59d;
+        border-bottom: ridge;
+        padding-left: 30px;
+        font-family: 'Playfair Display', serif; }
+      .shop .card-deck .card p {
+        color: #ffffff;
+        text-align: center;
+        padding: 20px;
+        font-family: 'Playfair Display', serif;
+        color: #5f6264; }
+      .shop .card-deck .card .card-text {
+        font-family: 'Open Sans Condensed', sans-serif;
+        letter-spacing: 2px;
+        text-align: left; }
+  .shop h5 {
+    font-family: 'Open Sans Condensed', sans-serif;
+    letter-spacing: 2px;
+    font-weight: bold;
+    color: #5f6264; }
+
+/*ESTRUCTURA CONTACTO*/
+.contacto {
+  background-color: #eaeaea; }
+  .contacto h1 {
+    color: #baa59d;
+    border-bottom: ridge;
+    padding-left: 30px;
+    font-family: 'Playfair Display', serif; }
+  .contacto p {
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    font-family: 'Playfair Display', serif; }
+  .contacto #mobile {
+    display: grid;
+    flex-flow: row nowrap;
+    justify-content: center; }
+    .contacto #mobile .contacto1 {
+      position: relative;
+      text-align: center; }
+      .contacto #mobile .contacto1 h1 {
+        font-size: 3rem;
+        border-bottom: none;
+        margin-bottom: 40px;
+        text-align: center;
+        padding-left: 0; }
+      .contacto #mobile .contacto1 h2 {
+        font-family: 'Open Sans Condensed', sans-serif;
+        letter-spacing: 2px;
+        font-weight: bold;
+        font-size: 12px;
+        color: #baa59d;
+        text-align: center; }
+      .contacto #mobile .contacto1 button {
+        color: #ffffff;
+        background-color: #baa59d;
+        font-family: 'Open Sans Condensed', sans-serif;
+        font-weight: bold;
+        letter-spacing: 2px;
+        font-size: 12px;
+        padding-left: 10px;
+        border-color: #baa59d; }
+    .contacto #mobile .contacto2 {
+      padding: 15px; }
+      .contacto #mobile .contacto2 form {
+        width: 300px;
+        left: 30%;
+        margin-top: 55px;
+        margin-bottom: 100px; }
+        .contacto #mobile .contacto2 form div {
+          font-family: 'Open Sans Condensed', sans-serif;
+          letter-spacing: 2px;
+          font-size: 16px; }
+          .contacto #mobile .contacto2 form div label input {
+            position: relative;
+            font-family: 'Open Sans Condensed', sans-serif;
+            letter-spacing: 2px; }
+          .contacto #mobile .contacto2 form div textarea {
+            width: -webkit-fill-available;
+            height: 200px;
+            padding-top: 0px; }
+        .contacto #mobile .contacto2 form .rellenar {
+          display: grid; }
+        .contacto #mobile .contacto2 form button {
+          color: #ffffff;
+          background-color: #5f6264;
+          font-family: 'Open Sans Condensed', sans-serif;
+          font-weight: bold;
+          letter-spacing: 2px;
+          font-size: 14px;
+          padding-left: 10px;
+          margin-top: 10px; }
+
+/*MOBILE*/
+@media (max-width: 750px) {
+  div#mobile {
+    display: block; }
+  #mobile .card-text {
+    display: block;
+    position: relative;
+    width: 100%;
+    left: auto;
+    margin-top: 10px;
+    transform: translateX(0%); }
+  #mobile img {
+    transform: translateX(0%); } }

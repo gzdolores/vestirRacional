@@ -1,0 +1,309 @@
+*{box-sizing: border-box;}
+
+$nude: #baa59d;
+$verde: rgba(109,126,128,0.7);
+$blanco: #ffffff;
+$grisosc: #5f6264;
+$griscla: #eaeaea;
+
+@mixin condicional ($color) {
+	background-color: ($color);
+	h1 {
+		@if $color == $verde {
+			color: $blanco;
+		} 
+		@if $color == $blanco {
+			color: $nude;
+		} 
+		@if $color == $griscla {
+			color: $nude;
+		}
+		border-bottom: ridge;
+		padding-left: 30px;
+		font-family: 'Playfair Display', serif;
+	}
+	p {
+		color: $blanco;
+		text-align: center;
+		padding: 20px;
+		font-family: 'Playfair Display', serif;
+		@if $color == $blanco {
+			color: $grisosc;
+		}
+	}
+}
+
+/*EXTEND*/
+.cardtex {
+	width: 50%;
+	display: inline-block;
+   	position: fixed;
+}
+
+/*HEADER*/
+#navheader {
+	display: flex;
+	justify-content: center;
+	margin: 0;
+	padding: 0;
+   #dropdownMenuButton { 
+		border-style: none; 
+		background: none;
+	
+		&:hover {
+			cursor: pointer;
+			background: rgba(0,0,0,0.1);
+		}
+	}
+	.dropdown-item {
+		font-family: 'Playfair Display', serif;
+	}
+	.navbar-brand {
+		opacity: 70%;
+	}
+}
+
+/*FOOTER*/	
+#navfoot {
+	padding: 0;
+	padding-bottom: 10px;
+	position: relative;
+   form {
+	   	position: relative;
+		left: 35%;
+		
+	   label {
+	   		color: $nude;
+			padding-bottom: 5px;
+			font-family: 'Open Sans Condensed', sans-serif;
+			font-size: smaller;
+    		line-height: normal;
+    		letter-spacing: 2px;
+	   }
+	   #mail {
+	   		font-size: smaller;
+    		line-height: normal;
+	   }
+	   button.signup {
+			position: relative;
+			display: inline-block;
+			color: $blanco;
+			background-color: $nude;
+			border-color: $nude;
+			font-family: 'Open Sans Condensed', sans-serif;
+			font-size: smaller;
+    		line-height: normal;
+    		letter-spacing: 2px;
+	   }
+   }
+   div.redes {
+   	position: absolute;
+   		opacity: 70%;
+		padding: 20px;
+		a {
+			padding: 0.5rem;
+		}
+   }
+}
+
+/*ESTRUCTURA GENERAL*/
+.contenedor {
+	width: 100%;
+	margin:0 auto;
+	overflow: hidden;
+}
+
+/*ESTRUCTURA HISTORIA*/
+.historia { 
+	@include condicional($verde)
+	.historia1 {
+		padding: 20px;
+		.card-text {
+			@extend .cardtex;
+			left: 25%;
+    		background-color: $verde;
+    	}
+		img {
+			width: 20rem;
+			position: relative;
+			left: 8rem;
+			animation-name: transicion;
+			animation-duration: 3s;
+			animation-iteration-count: 1;
+			animation-direction: normal;
+			animation-delay: 1000ms;
+			animation-timing-function: ease;
+			transform: translateY(70px);
+		}
+	}
+	.historia2 {
+		.card {
+			border: none;
+			position: static;
+		}
+	}
+}
+		/*ANIMACION*/
+		@keyframes transicion {
+			0% {transform: translateY(-50px);}
+			100% {transform: translateY(70px);}
+		}
+
+/*ESTRUCTURA COLECCION*/
+.colecciones {
+	@include condicional($blanco)
+	.media {
+		justify-content: center;
+		padding: 20px;
+		.card-text {
+			@extend .cardtex;
+    		background-color: rgba(0,0,0,0.6);
+    		animation-name: transiciontexto;
+			animation-duration: 3s;
+			animation-iteration-count: 1;
+			animation-direction: normal;
+			animation-delay: 1000ms;
+			animation-timing-function: ease;
+			transform: translateX(-125px);
+    	}
+		img {
+			padding: 20px;
+			width: 25rem;
+			margin-left: 1rem;
+			animation-name: transicioncolec;
+			animation-duration: 3s;
+			animation-iteration-count: 1;
+			animation-direction: normal;
+			animation-delay: 1000ms;
+			animation-timing-function: ease;
+			transform: translateX(140px);
+		}
+	}
+}
+		/*ANIMACION*/
+		@keyframes transicioncolec {
+			0% {transform: translateX(0px);}
+			100% {transform: translateX(140px);}
+		}
+		@keyframes transiciontexto {
+			0% {transform: translateX(0px);}
+			100% {transform: translateX(-125px);}
+		}
+
+/*ESTRUCTURA SHOP*/
+.shop { 
+	@include condicional($verde)
+	.card-deck {
+		padding: 20px;
+		.card {
+			@include condicional($blanco)
+			.card-text {
+				font-family: 'Open Sans Condensed', sans-serif;
+				letter-spacing: 2px;
+				text-align: left;
+			}
+		}
+	}
+	h5 {
+		font-family: 'Open Sans Condensed', sans-serif;
+		letter-spacing: 2px;
+		font-weight: bold;
+		color: $grisosc;
+	}
+}
+
+/*ESTRUCTURA CONTACTO*/
+.contacto {
+	@include condicional($griscla)
+	#mobile {
+		display: grid;
+		flex-flow: row nowrap;
+		justify-content: center;
+		.contacto1 {
+			position: relative;
+			text-align: center;
+			h1 {
+				font-size: 3rem;
+				border-bottom: none;
+				margin-bottom: 40px;
+				text-align: center;
+				padding-left: 0;
+			}
+			h2 {
+				font-family: 'Open Sans Condensed', sans-serif;
+				letter-spacing: 2px;
+				font-weight: bold;
+				font-size: 12px;
+				color: $nude;
+				text-align: center;
+			}
+			button {
+				color: $blanco;
+				background-color: $nude;
+				font-family: 'Open Sans Condensed', sans-serif;
+				font-weight: bold;
+				letter-spacing: 2px;
+				font-size: 12px;
+				padding-left: 10px;
+				border-color: $nude;
+			}
+		}
+		.contacto2 {
+			padding: 15px;
+			form {
+				width: 300px;
+				left: 30%;
+				margin-top: 55px;
+				margin-bottom: 100px;
+				div {
+					font-family: 'Open Sans Condensed', sans-serif;
+					letter-spacing: 2px;
+					font-size: 16px;
+					label input {
+						position: relative; 
+						font-family: 'Open Sans Condensed', sans-serif;
+						letter-spacing: 2px;
+					}
+					textarea {
+						width: -webkit-fill-available;
+						height: 200px;
+						padding-top: 0px;
+					}
+				}
+				.rellenar {
+					display: grid;
+				}
+				button {
+					color: $blanco;
+					background-color: $grisosc;
+					font-family: 'Open Sans Condensed', sans-serif;
+					font-weight: bold;
+					letter-spacing: 2px;
+					font-size: 14px;
+					padding-left: 10px;
+					margin-top: 10px;
+				}
+			}
+		}
+	}
+}
+
+/*MOBILE*/
+@media (max-width: 750px) {	
+	div#mobile {
+		display: block;
+	}
+	#mobile {
+		.card-text {
+			display: block;
+			position: relative;
+			width: 100%;
+			left: auto;
+			margin-top: 10px;
+			transform: translateX(0%);
+		}
+		img {
+			transform: translateX(0%);
+		}
+	}
+}
