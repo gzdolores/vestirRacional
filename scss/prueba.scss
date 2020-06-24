@@ -5,6 +5,7 @@ $verde: rgba(109,126,128,0.7);
 $blanco: #ffffff;
 $grisosc: #5f6264;
 $griscla: #eaeaea;
+$transparencia: rgba(0,0,0,0.6);
 
 @mixin condicional ($color) {
 	background-color: ($color);
@@ -115,7 +116,7 @@ $griscla: #eaeaea;
 
 /*ESTRUCTURA HISTORIA*/
 .historia { 
-	@include condicional($verde)
+	@include condicional($verde);
 	.historia1 {
 		padding: 20px;
 		.card-text {
@@ -151,13 +152,14 @@ $griscla: #eaeaea;
 
 /*ESTRUCTURA COLECCION*/
 .colecciones {
-	@include condicional($blanco)
+	@include condicional($blanco);
 	.media {
 		justify-content: center;
 		padding: 20px;
 		.card-text {
+			color: $blanco;
+			background-color: $transparencia;
 			@extend .cardtex;
-    		background-color: rgba(0,0,0,0.6);
     		animation-name: transiciontexto;
 			animation-duration: 3s;
 			animation-iteration-count: 1;
@@ -192,11 +194,11 @@ $griscla: #eaeaea;
 
 /*ESTRUCTURA SHOP*/
 .shop { 
-	@include condicional($verde)
+	@include condicional($verde);
 	.card-deck {
 		padding: 20px;
 		.card {
-			@include condicional($blanco)
+			@include condicional($blanco);
 			.card-text {
 				font-family: 'Open Sans Condensed', sans-serif;
 				letter-spacing: 2px;
@@ -214,7 +216,7 @@ $griscla: #eaeaea;
 
 /*ESTRUCTURA CONTACTO*/
 .contacto {
-	@include condicional($griscla)
+	@include condicional($griscla);
 	#mobile {
 		display: grid;
 		flex-flow: row nowrap;
